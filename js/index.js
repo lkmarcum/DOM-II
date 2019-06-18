@@ -30,9 +30,6 @@ topImg.addEventListener("mouseout", event => {
   event.target.style.border = "none";
   event.target.style.borderRadius = "0px";
 });
-topImg.addEventListener("click", event => {
-  event.target.style.display = "float";
-});
 
 const topMidImg = document.querySelector(".content-section .img-content img");
 topMidImg.addEventListener("mouseover", event => {
@@ -59,6 +56,23 @@ destinationImg.addEventListener("mouseover", event => {
 });
 destinationImg.addEventListener("mouseout", event => {
   event.target.style.border = "none";
+});
+
+// Fades images to opacity: 0 on click
+topImg.addEventListener("click", event => {
+  TweenMax.to(topImg, 4, { opacity: 0 });
+});
+
+topMidImg.addEventListener("click", event => {
+  TweenMax.to(topMidImg, 4, { opacity: 0 });
+});
+
+topBotImg.addEventListener("click", event => {
+  TweenMax.to(topBotImg, 4, { opacity: 0 });
+});
+
+destinationImg.addEventListener("click", event => {
+  TweenMax.to(destinationImg, 4, { opacity: 0 });
 });
 
 // Changes background color of footer & header on click
