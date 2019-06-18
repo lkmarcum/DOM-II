@@ -122,3 +122,16 @@ button3.addEventListener("mouseover", event => {
 button3.addEventListener("mouseout", event => {
   event.target.style.background = "#17A2B8";
 });
+
+// Change font style of intro text on auxclick
+const topPara = document.querySelector(".intro");
+topPara.addEventListener("auxclick", event => {
+  topPara.style.fontStyle = "italic";
+});
+
+// Change font style of intro h2 text on auxclick -- propagation stopped before style change reaches paragraph text
+const topTitle = document.querySelector(".intro h2");
+topTitle.addEventListener("auxclick", event => {
+  event.target.style.fontStyle = "italic";
+  event.stopPropagation();
+});
