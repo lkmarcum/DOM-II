@@ -20,6 +20,15 @@ blocks.forEach(function(block) {
 
     block.addEventListener("mouseup", event => {
       clearInterval(id);
+      let back = setInterval(backwards, 10);
+      function backwards() {
+        if (pos === 0) {
+          clearInterval(back);
+        } else {
+          pos--;
+          event.target.style.left = pos + "px";
+        }
+      }
     });
   });
 });
