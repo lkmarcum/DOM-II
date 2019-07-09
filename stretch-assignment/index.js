@@ -6,6 +6,7 @@ blocks.forEach(function(block) {
     });
     event.target.style.order = "0";
   });
+
   let pos = 0;
   block.addEventListener("mousedown", event => {
     let id = setInterval(frame, 10);
