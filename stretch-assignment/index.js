@@ -10,8 +10,12 @@ blocks.forEach(function(block) {
   block.addEventListener("mousedown", event => {
     let id = setInterval(frame, 10);
     function frame() {
-      pos++;
-      event.target.style.left = pos + "px";
+      if (pos === 1000) {
+        clearInterval(id);
+      } else {
+        pos++;
+        event.target.style.left = pos + "px";
+      }
     }
 
     block.addEventListener("mouseup", event => {
