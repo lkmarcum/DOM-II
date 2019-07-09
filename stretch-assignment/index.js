@@ -8,8 +8,10 @@ blocks.forEach(function(block) {
   });
 
   let pos = 0;
+
   block.addEventListener("mousedown", event => {
     let id = setInterval(frame, 10);
+
     function frame() {
       if (pos === 1000) {
         clearInterval(id);
