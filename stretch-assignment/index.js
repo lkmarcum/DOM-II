@@ -13,3 +13,14 @@ blocks.forEach(function(block) {
     event.target.style.order = "0";
   });
 });
+
+blocks.forEach(function(block) {
+  block.addEventListener("mousedown", event => {
+    let pos = 0;
+    let id = setInterval(frame, 10);
+    function frame() {
+      pos++;
+      event.target.style.left = pos + "px";
+    }
+  });
+});
